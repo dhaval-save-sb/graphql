@@ -36,7 +36,9 @@ class Menu extends Eloquent{
             'restaurant_id' => [
                 'name' => 'restaurant_id',
                 'description' => 'The address of restaurant',
-                'type' => GraphQL::type('Address'),
+                'type' => Type::listOf(
+                        Type::string()
+                ),
                 'is_relation' => false
             ],
             'ingredients'=>[

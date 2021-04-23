@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\GraphQL\Queries\MenuQuery;
 use App\GraphQL\Types\AddressType;
 use App\GraphQL\Inputs\AddressInput;
 use App\GraphQL\Scalars\GeoJSONType;
@@ -25,6 +26,7 @@ return [
         'default' => [
             'query' => [
                 'Restaurants' => RestaurantQuery::class,
+                'Menu'=>MenuQuery::class
             ],
             'mutation' => [
                 'CreateRestaurant' => CreateRestaurantMutation::class
@@ -39,7 +41,7 @@ return [
         'CoverageArea' => AreaCoverageType::class,
         'GeoJSON' => GeoJSONType::class,
         'Address' => AddressType::class,
-
+        'Menu'=>\App\GraphQL\Types\MenuType::class,
         'AddressInput' => AddressInput::class,
         'CoverageAreaInput' => CoverageAreaInput::class,
     ],
